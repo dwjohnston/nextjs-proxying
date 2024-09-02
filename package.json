@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:secure": "NODE_EXTRA_CA_CERTS=~/.mitmproxy/mitmproxy-ca-cert.pem next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "file": "node file.mjs",
+    "file:secure": "NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_EXTRA_CA_CERTS=~/.mitmproxy/mitmproxy-ca-cert.pem node file.mjs"
   },
   "dependencies": {
     "https-proxy-agent": "^7.0.5",
