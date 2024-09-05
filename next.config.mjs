@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+import { readFileSync } from "fs";
 import { setGlobalDispatcher, ProxyAgent } from "undici";
-const dispatcher = new ProxyAgent({uri: new URL("https://127.0.0.1:8080").toString() });
+
+const dispatcher = new ProxyAgent({uri: new URL("https://127.0.0.1:8080").toString()});
 setGlobalDispatcher(dispatcher);
+
 
 
 const nextConfig = {
@@ -9,7 +12,8 @@ const nextConfig = {
         return [
           {
             source: '/api/:path*',
-            destination: 'https://jsonplaceholder.typicode.com/:path*',
+            destination: 'http://localhost:3001/:path*',
+            
           },
         ]
       },

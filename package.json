@@ -12,6 +12,7 @@
     "file:secure": "NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_EXTRA_CA_CERTS=~/.mitmproxy/mitmproxy-ca-cert.pem node file.mjs"
   },
   "dependencies": {
+    "http-proxy": "^1.18.1",
     "https-proxy-agent": "^7.0.5",
     "next": "14.2.5",
     "node-fetch": "^3.3.2",
