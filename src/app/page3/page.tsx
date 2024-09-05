@@ -1,9 +1,5 @@
-import { ComponentFetch } from "@/components/ComponentFetch";
-import { ComponentFetchRelative } from "@/components/ComponentFetchRelative";
-
-
 async function getData() {
-    const result = await fetch("https://jsonplaceholder.typicode.com/posts/3")
+    const result = await fetch(`${process.env.UPSTREAM_URL}/posts/3`)
     return result.json();
 }
 

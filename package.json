@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:secure": "NODE_EXTRA_CA_CERTS=~/.mitmproxy/mitmproxy-ca-cert.pem next dev",
+    "proxy": "NODE_EXTRA_CA_CERTS=~/.mitmproxy/mitmproxy-ca-cert.pem node proxy.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
