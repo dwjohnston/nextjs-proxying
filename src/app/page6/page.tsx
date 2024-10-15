@@ -1,4 +1,3 @@
-import {HttpsProxyAgent} from 'https-proxy-agent';
 
 import nodeFetch from"node-fetch";
 

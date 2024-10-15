@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Example application demonstrating the use of recording network traffic into a HAR file using MITMProxy. 
 
-## Getting Started
 
-First, run the development server:
+Instructions: 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+In one terminal start the the proxy with: 
+
+```
+npm run proxy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In another terminal start the dev server: 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+```
+npm run dev:secure
+```
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+In a third terminal start mitmproxy running in observe mode: (you will need mitmproxy install seperately) 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+npm run mitm
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Now navigate to localhost:3000/page/1 through localhost:3000/page/6
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Observe that all except page 1 will be captured by MITMproxy (page 1 will not be captured, unless you have configured your browser to also use a proxy). 
+
+Record a har file with the following command in the mitm cli: 
+
+```
+:save.har @all 1.har
+```
+
+
+Exit mitm proxy ('q'), and start in replay mode with: 
+
+```
+npm run mitm:replay
+```
+
+Rerun the your requests, note that they return instantly. 
+
+

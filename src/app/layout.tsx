@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { setGlobalDispatcher, ProxyAgent } from "undici";
-const dispatcher = new ProxyAgent({uri: new URL("https://127.0.0.1:8080").toString() });
-setGlobalDispatcher(dispatcher);
+// import { setGlobalDispatcher, ProxyAgent } from "undici";
+// const dispatcher = new ProxyAgent({uri: new URL("https://127.0.0.1:8080").toString() });
+// setGlobalDispatcher(dispatcher);
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

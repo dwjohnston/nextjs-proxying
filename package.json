@@ -10,7 +10,9 @@
     "start": "next start",
     "lint": "next lint",
     "file": "node file.mjs",
-    "file:secure": "NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_EXTRA_CA_CERTS=~/.mitmproxy/mitmproxy-ca-cert.pem node file.mjs"
+    "file:secure": "NODE_EXTRA_CA_CERTS=~/.mitmproxy/mitmproxy-ca-cert.pem node file.mjs", 
+    "mitm": "mitmproxy", 
+    "mitm:replay": "mitmproxy --set server_replay=1.har --set server_replay_reuse=true"
   },
   "dependencies": {
     "http-proxy": "^1.18.1",

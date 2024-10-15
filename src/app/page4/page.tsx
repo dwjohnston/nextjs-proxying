@@ -1,9 +1,6 @@
-import { ComponentFetch } from "@/components/ComponentFetch";
-import { ComponentFetchRelative } from "@/components/ComponentFetchRelative";
-
 
 async function getData() {
-    const result = await fetch("/api/posts/4")
+    const result = await fetch(`${process.env.UPSTREAM_URL}/posts/4`)
     return result.json();
 }
 
