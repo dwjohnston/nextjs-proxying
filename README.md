@@ -1,5 +1,7 @@
 Example application demonstrating the use of recording network traffic into a HAR file using MITMProxy. 
 
+Corresponding blog post here: https://blacksheepcode.com/posts/how_to_proxy_nextjs
+
 
 Instructions: 
 
