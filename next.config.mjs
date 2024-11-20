@@ -6,7 +6,6 @@ const nextConfig = {
           {
             source: '/api/:path*',
             destination: `${process.env.UPSTREAM_URL}/:path*`,
-            
           },
         ]
       },
